@@ -9,7 +9,7 @@ kind create cluster --config kind/kind-config.yaml
 ## Install Operator Lifecycle Manager
 ```bash
 curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.25.0/install.sh | bash -s v0.25.0
-```bash
+```
 
 ## Install OpenVINO operator
 ```bash
@@ -19,7 +19,7 @@ kubectl get csv -n operators
 NAME                       DISPLAY                     VERSION   REPLACES                   PHASE 
 
 openvino-operator.v1.1.0   OpenVINO Toolkit Operator   1.1.0     openvino-operator.v1.0.0   Succeeded 
-```bash
+```
 
 ## Deploy sample OpenVINO model server
 This deploys an OpenVINO model server with a ResNet-50 image classification model.
