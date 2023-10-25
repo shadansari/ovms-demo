@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: python-container
+        image: my-python-app:0.1.0
+        command: ["python3", "-u", "/container/data/app.py"]
+        volumeMounts:
+        - name: my-volume
+          mountPath: /container/data
+      volumes:
+      - name: my-volume
+        hostPath:
+          path: /data
+          type: Directory

@@ -5,3 +5,5 @@ nodes:
     extraMounts:
       - hostPath: /home/seu/ovms-demo/models
         containerPath: /models
+      - hostPath: /home/seu/ovms-demo/data
+        containerPath: /data

@@ -1,0 +1,9 @@
+from ovmsclient import make_grpc_client
+import numpy as np
+print("Test app")
+client = make_grpc_client("ovms-sample:8080")
+with open("/container/data/zebra.jpeg", "rb") as f:
+    data = f.read()
+inputs = {"map/TensorArrayStack/TensorArrayGatherV3:0": data}
+results = client.predict(inputs=inputs, model_name="resnet")
+print("Detected class:", np.argmax(results))
