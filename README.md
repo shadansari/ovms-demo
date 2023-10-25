@@ -64,4 +64,6 @@ Check app logs
 ```bash
 POD_NAME=$(kubectl get pods -l app=python-app -o jsonpath="{.items[0].metadata.name}")
 kubectl logs $POD_NAME
+Test app
+Detected class: 340
 ```
